@@ -46,6 +46,28 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  // Toggle Item Location (Fridge <-> Pantry)
+  const locationButtons = document.querySelectorAll('.location-toggle-btn');
+  
+  locationButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.classList.contains('fridge')) {
+        // Switch to Pantry
+        btn.classList.remove('fridge');
+        btn.classList.add('pantry');
+        btn.innerHTML = '<i class="fas fa-archive"></i> Pantry';
+      } else {
+        // Switch to Fridge
+        btn.classList.remove('pantry');
+        btn.classList.add('fridge');
+        btn.innerHTML = '<i class="fas fa-snowflake"></i> Fridge';
+      }
+    });
+  });
+});
+
+
 
 async function main() {
     const dialogBox = document.getElementById("food-dialog");

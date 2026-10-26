@@ -5,60 +5,134 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kitchen Keeper - Pantry</title>
   <link rel="stylesheet" href="css/styles.css">
-  <!-- Font Awesome 5 per Visual Style Guide -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
   <div class="device-container">
     <header class="app-header">
       <h1 class="app-title">What you have...</h1>
+      <!-- Optional Category Filter / Quick Add bar -->
+      <div class="input-group" style="margin-bottom: 8px;">
+        <input type="text" class="text-input" placeholder="Add pantry item...">
+        <button class="btn-primary">Add</button>
+      </div>
     </header>
 
     <main class="app-content">
-      <table class="pantry-table">
-        <thead>
-          <tr>
-            <th>Items</th>
-            <th>Count</th>
-            <th>Exp. Date</th>
-          </tr>
-        </thead>
-        <tbody id="pantry-list">
-          <tr>
-            <td>Eggs</td>
-            <td>
-              <div class="qty-control">
-                <button class="btn-qty btn-minus">-</button>
-                <span class="qty-val">6</span>
-                <button class="btn-qty btn-plus">+</button>
-              </div>
-            </td>
-            <td>10/20/2026</td>
-          </tr>
-          <tr>
-            <td>Milk</td>
-            <td>
-              <div class="qty-control">
-                <button class="btn-qty btn-minus">-</button>
-                <span class="qty-val">1 gal</span>
-                <button class="btn-qty btn-plus">+</button>
-              </div>
-            </td>
-            <td>10/17/2026</td>
-          </tr>
-          <tr>
-            <td>Bread</td>
-            <td>
-              <div class="qty-control">
-                <button class="btn-qty btn-minus">-</button>
-                <span class="qty-val">12 slices</span>
-                <button class="btn-qty btn-plus">+</button>
-              </div>
-            </td>
-            <td>10/24/2026</td>
-          </tr>
-        </tbody>
-      </table>
+      <!-- PRODUCE CATEGORY -->
+      <div class="category-section">
+        <h3 class="category-title"><i class="fas fa-carrot"></i> Produce</h3>
+        <table class="pantry-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Qty</th>
+              <th>Location</th>
+              <th>Exp. Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Blueberries</td>
+              <td>
+                <div class="qty-control">
+                  <button class="btn-qty btn-minus">-</button>
+                  <span class="qty-val">1 pt</span>
+                  <button class="btn-qty btn-plus">+</button>
+                </div>
+              </td>
+              <td>
+                <button class="location-toggle-btn fridge" title="Click to change location">
+                  <i class="fas fa-snowflake"></i> Fridge
+                </button>
+              </td>
+              <td>10/18/2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- DAIRY CATEGORY -->
+      <div class="category-section" style="margin-top: 20px;">
+        <h3 class="category-title"><i class="fas fa-cheese"></i> Dairy & Eggs</h3>
+        <table class="pantry-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Qty</th>
+              <th>Location</th>
+              <th>Exp. Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Eggs</td>
+              <td>
+                <div class="qty-control">
+                  <button class="btn-qty btn-minus">-</button>
+                  <span class="qty-val">6</span>
+                  <button class="btn-qty btn-plus">+</button>
+                </div>
+              </td>
+              <td>
+                <button class="location-toggle-btn fridge" title="Click to change location">
+                  <i class="fas fa-snowflake"></i> Fridge
+                </button>
+              </td>
+              <td>10/20/2026</td>
+            </tr>
+            <tr>
+              <td>Milk</td>
+              <td>
+                <div class="qty-control">
+                  <button class="btn-qty btn-minus">-</button>
+                  <span class="qty-val">1 gal</span>
+                  <button class="btn-qty btn-plus">+</button>
+                </div>
+              </td>
+              <td>
+                <button class="location-toggle-btn fridge" title="Click to change location">
+                  <i class="fas fa-snowflake"></i> Fridge
+                </button>
+              </td>
+              <td>10/17/2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- PANTRY / DRY GOODS CATEGORY -->
+      <div class="category-section" style="margin-top: 20px;">
+        <h3 class="category-title"><i class="fas fa-boxes"></i> Dry Goods & Pantry</h3>
+        <table class="pantry-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Qty</th>
+              <th>Location</th>
+              <th>Exp. Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bread</td>
+              <td>
+                <div class="qty-control">
+                  <button class="btn-qty btn-minus">-</button>
+                  <span class="qty-val">12 slices</span>
+                  <button class="btn-qty btn-plus">+</button>
+                </div>
+              </td>
+              <td>
+                <button class="location-toggle-btn pantry" title="Click to change location">
+                  <i class="fas fa-archive"></i> Pantry
+                </button>
+              </td>
+              <td>10/24/2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </main>
 
     <nav class="bottom-nav">
