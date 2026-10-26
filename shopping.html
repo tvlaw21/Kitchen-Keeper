@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kitchen Keeper - Shopping List</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="device-container">
+    <header class="app-header">
+      <h1 class="app-title">Your shopping list...</h1>
+      <div class="input-group">
+        <input type="text" id="shop-input" class="text-input" placeholder="Add..">
+        <button id="add-shop-btn" class="btn-primary">Add</button>
+      </div>
+    </header>
+
+    <main class="app-content" id="shopping-list-container">
+      <div class="shopping-item">
+        <div class="shopping-item-left">
+          <input type="checkbox" checked>
+          <span>Blueberries</span>
+        </div>
+        <button class="remove-btn">&times;</button>
+      </div>
+      <div class="shopping-item">
+        <div class="shopping-item-left">
+          <input type="checkbox">
+          <span>Butter</span>
+        </div>
+        <button class="remove-btn">&times;</button>
+      </div>
+      <div class="shopping-item">
+        <div class="shopping-item-left">
+          <input type="checkbox">
+          <span>Ranch</span>
+        </div>
+        <button class="remove-btn">&times;</button>
+      </div>
+      <div class="shopping-item">
+        <div class="shopping-item-left">
+          <input type="checkbox">
+          <span>Tomatoes</span>
+        </div>
+        <button class="remove-btn">&times;</button>
+      </div>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="recipes.html" class="nav-item">
+        <i class="fas fa-utensils"></i>
+        <span>recipes</span>
+      </a>
+      <a href="shopping.html" class="nav-item active">
+        <i class="fas fa-shopping-cart"></i>
+        <span>shopping</span>
+      </a>
+      <a href="index.html" class="nav-item">
+        <i class="fas fa-archive"></i>
+        <span>pantry</span>
+      </a>
+      <a href="calendar.html" class="nav-item">
+        <i class="fas fa-calendar-alt"></i>
+        <span>Calendar</span>
+      </a>
+    </nav>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>

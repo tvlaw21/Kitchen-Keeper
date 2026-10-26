@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kitchen Keeper - Recipes</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="device-container">
+    <header class="app-header">
+      <h1 class="app-title">Hello! Start looking for recipes...</h1>
+      <div class="input-group">
+        <input type="text" class="text-input" placeholder="🔍 Search recipes">
+      </div>
+      <div class="filter-pills">
+        <button class="pill">Kids</button>
+        <button class="pill">Vegan</button>
+        <button class="pill">Gluten-free</button>
+        <button class="pill">More <i class="fas fa-sliders-h"></i></button>
+      </div>
+    </header>
+
+    <main class="app-content">
+      <div class="recipe-card">
+        <div class="recipe-img-placeholder"><i class="fas fa-stroopwafel fa-2x"></i></div>
+        <div class="recipe-title">Blueberry pancakes</div>
+        <i class="fas fa-star star-fav active"></i>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-img-placeholder"><i class="fas fa-concierge-bell fa-2x"></i></div>
+        <div class="recipe-title">Buffalo chicken dip</div>
+        <i class="far fa-star star-fav"></i>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-img-placeholder"><i class="fas fa-hamburger fa-2x"></i></div>
+        <div class="recipe-title">Steak tacos</div>
+        <i class="far fa-star star-fav"></i>
+      </div>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="recipes.html" class="nav-item active">
+        <i class="fas fa-utensils"></i>
+        <span>recipes</span>
+      </a>
+      <a href="shopping.html" class="nav-item">
+        <i class="fas fa-shopping-cart"></i>
+        <span>shopping</span>
+      </a>
+      <a href="index.html" class="nav-item">
+        <i class="fas fa-archive"></i>
+        <span>pantry</span>
+      </a>
+      <a href="calendar.html" class="nav-item">
+        <i class="fas fa-calendar-alt"></i>
+        <span>Calendar</span>
+      </a>
+    </nav>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
