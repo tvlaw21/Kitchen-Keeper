@@ -4,43 +4,135 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kitchen Keeper - Recipes</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
 </head>
+
 <body>
   <div class="device-container">
+	<div class="content scrollable">
     <header class="app-header">
       <h1 class="app-title">Hello! Start looking for recipes...</h1>
       <div class="input-group">
-        <input type="text" class="text-input" placeholder="🔍 Search recipes">
+        <input type="text" class="text-input" id="searchBar" placeholder="🔍 Search recipes" oninput="search()">
+        <button onclick="search()" class="searchButton"> Search </button>
       </div>
-      <div class="filter-pills">
-        <button class="pill">Kids</button>
-        <button class="pill">Vegan</button>
-        <button class="pill">Gluten-free</button>
-        <button class="pill">More <i class="fas fa-sliders-h"></i></button>
-      </div>
+      <div class="filters">
+                    <label><input type="button" value="favorite" class="food-filter"></label>
+                    <label><input type="button" value="vegan" class="food-filter"></label>
+					<label><input type="button" value="gluten-free" class="food-filter"></label>
+                    <label><input type="button" value="vegetarian" class="food-filter"></label>
+					<label><input type="button" value="dairy-free" class="food-filter"></label>
+					<label><input type="button" value="allergies" class="food-filter allergies" id="allergies" ></label>
+        </div>
     </header>
 
-    <main class="app-content">
-      <div class="recipe-card">
-        <div class="recipe-img-placeholder"><i class="fas fa-stroopwafel fa-2x"></i></div>
-        <div class="recipe-title">Blueberry pancakes</div>
-        <i class="fas fa-star star-fav active"></i>
-      </div>
+    <dialog id="food-dialog">
+			<p>HIIIII</p>
+			<button id="close">Close</button>
+		</dialog>
 
-      <div class="recipe-card">
-        <div class="recipe-img-placeholder"><i class="fas fa-concierge-bell fa-2x"></i></div>
-        <div class="recipe-title">Buffalo chicken dip</div>
-        <i class="far fa-star star-fav"></i>
-      </div>
+		<div id="resultDiv">
+			<p id="noResult"></p>
+		</div>
 
-      <div class="recipe-card">
-        <div class="recipe-img-placeholder"><i class="fas fa-hamburger fa-2x"></i></div>
-        <div class="recipe-title">Steak tacos</div>
-        <i class="far fa-star star-fav"></i>
-      </div>
-    </main>
+	   <ul class="recipe-div" id="allRecipes">
+		<li class="recipe" id="BlueberryPancakes"> 
+			<a href="BlueberryPancakes.html" class="recipe-link">
+			<img src="Blueberry-Pancakes.png" alt="Blueberry-Pancakes" class="recipe-image">
+			<div class="recipe-content">
+				<div class="recipe-text">
+					<div id="favorites1" class="favorites">
+						<input type="checkbox" value="heart1" name="favorite" id="heart1" class="heart">
+						<label for="heart1"> &#9829 </label>
+					</div>
+					<h4>Blueberry Pancakes</h4>
+					<p>Super thick and fluffy blueberry pancakes! Melt in your mouth, golden brown, and bursting with blueberries.</p>
+				</div>
+				<div id="ratings1" class="ratings">
+						<input type="checkbox" value="1" name="ratingStars" id="star1" class="star">
+						<label for="star1"> &#9733 </label>
+						<input type="checkbox" value="2" name="ratingStars" id="star2" class="star">
+						<label for="star2"> &#9733 </label>
+						<input type="checkbox" value="3" name="ratingStars" id="star3" class="star">
+						<label for="star3"> &#9733 </label>
+						<input type="checkbox" value="4" name="ratingStars" id="star4" class="star">
+						<label for="star4"> &#9733 </label>
+						<input type="checkbox" value="5" name="ratingStars" id="star5" class="star">
+						<label for="star5"> &#9733 </label>
+				</div>
+			</div>
+			</a>
+		</li>
+		<li class="recipe" id="SalmonFriedRice"> 
+			<a href="SalmonFriedRice.html" class="recipe-link">
+			<img src="SalmonFriedRice.png" alt="SalmonFriedRice" class="recipe-image">
+			<div class="recipe-content">
+				<div class="recipe-text">
+					<div id="favorites2" class="favorites">
+						<input type="checkbox" value="heart2" name="favorite2" id="heart2" class="heart">
+						<label for="heart2"> &#9829 </label>
+					</div>
+					<h4>Salmon Fried Rice</h4>
+					<p>This salmon fried rice is a quick and easy way to turn leftover rice and cooked salmon into a satisfying dinner in just 20 minutes. Frozen peas and carrots, eggs, garlic, ginger, and soy sauce bring everything together in one skillet.</p>
+				</div>
+				<div id="ratings2" class="ratings">
+						<input type="checkbox" value="second1" name="rating2Stars" id="r2star1" class="star">
+						<label for="r2star1"> &#9733 </label>
+						<input type="checkbox" value="second2" name="rating2Stars" id="r2star2" class="star">
+						<label for="r2tar2"> &#9733 </label>
+						<input type="checkbox" value="second3" name="rating2Stars" id="r2star3" class="star">
+						<label for="r2star3"> &#9733 </label>
+						<input type="checkbox" value="second4" name="rating2Stars" id="r2star4" class="star">
+						<label for="r2star4"> &#9733 </label>
+						<input type="checkbox" value="second5" name="rating2Stars" id="r2star5" class="star">
+						<label for="r2star5"> &#9733 </label>
+				</div>
+			</div>
+			</a>
+		</li>
+		
+		<li class="recipe vegetarian gluten-free" id="CafeLatte"> 
+			<a href="CafeLatté.html" class="recipe-link">
+			<img src="CafeLatté.png" alt="CafeLatté" class="recipe-image">
+			<div class="recipe-content">
+				<div class="recipe-text">
+					<div id="favorites3" class="favorites">
+						<input type="checkbox" value="heart3" name="favorite3" id="heart3" class="heart">
+						<label for="heart3"> &#9829 </label>
+					</div>
+					<h4>Cafe Latté</h4>
+					<p>Learn how to make a café latte with this easy recipe that will please all fellow coffee drinkers. I love café lattes, but buying them can be pricey. Try this at home!</p>
+				</div>
+				<div id="ratings3" class="ratings">
+						<input type="checkbox" value="second1" name="rating3Stars" id="r3star1" class="star">
+						<label for="r3star1"> &#9733 </label>
+						<input type="checkbox" value="second2" name="rating3Stars" id="r3star2" class="star">
+						<label for="r3tar2"> &#9733 </label>
+						<input type="checkbox" value="second3" name="rating3Stars" id="r3star3" class="star">
+						<label for="r3star3"> &#9733 </label>
+						<input type="checkbox" value="second4" name="rating3Stars" id="r3star4" class="star">
+						<label for="r3star4"> &#9733 </label>
+						<input type="checkbox" value="second5" name="rating3Stars" id="r3star5" class="star">
+						<label for="r3star5"> &#9733 </label>
+				</div>
+			</div>
+			</a>
+		</li>
+		
+
+
+	</ul>
+
+</div>
+
+
+
+
+
+
+
 
     <nav class="bottom-nav">
       <a href="recipes.html" class="nav-item active">
@@ -62,5 +154,7 @@
     </nav>
   </div>
   <script src="js/main.js"></script>
+  
+  
 </body>
 </html>

@@ -46,6 +46,8 @@ body {
   position: relative;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+	flex-shrink: 0;
 }
 
 /* Header Area */
@@ -172,7 +174,8 @@ body {
 }
 
 /* Recipes Styling */
-.filter-pills {
+
+.filters {
   display: flex;
   gap: 8px;
   overflow-x: auto;
@@ -180,7 +183,7 @@ body {
   margin-bottom: 16px;
 }
 
-.pill {
+.food-filter {
   padding: 6px 14px;
   border: 1.5px solid var(--color-border);
   border-radius: 20px;
@@ -188,9 +191,23 @@ body {
   white-space: nowrap;
   font-size: 16px;
   cursor: pointer;
+  background-color: #F2D0A9;
+}
+.food-filter.active,
+.food-filter:hover{
+  background-color: #eee;
 }
 
-.recipe-card {
+.searchButton{
+  padding: 4px 10px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 20px;
+  background-color: var(--bg-accent);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.recipe{
   display: flex;
   align-items: center;
   border: 2px solid var(--color-border);
@@ -201,7 +218,14 @@ body {
   position: relative;
 }
 
-.recipe-img-placeholder {
+.recipe-div{
+  max-width: 450px;
+  margin: 0 auto;
+  border-radius: 10px;
+  list-style-type: none;
+}
+
+.recipe-image{
   width: 70px;
   height: 70px;
   border-radius: 8px;
@@ -213,12 +237,113 @@ body {
   border: 1.5px solid var(--color-border);
 }
 
-.recipe-title {
-  font-size: 20px;
-  font-weight: bold;
-  flex: 1;
+ul.recipe-div li a{
+  display: flex;
+  color: black;
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 14px;
+  align-items: center;
 }
 
+.recipe:hover{
+  cursor: pointer;
+  background-color: #cccccc;
+}
+
+.recipe-content{
+flex:1;
+align-items: center;
+}
+
+.recipe-text{
+  text-align: center;
+  font-size: 20px;
+}
+.recipe-text p{
+  font-size: 15px;
+}
+
+
+.ratings input{
+  appearance: none;
+}
+
+.ratings label{
+  cursor: pointer;
+  display: block;
+}
+
+#ratings1 label:hover,
+#ratings1 label:hover ~ label,
+#ratings1 input:checked ~ label{
+  color: gold;
+  fill: gold;
+  cursor: pointer;
+}
+
+#ratings2 label:hover,
+#ratings2 label:hover ~ label,
+#ratings2 input:checked ~ label{
+  color: gold;
+  fill: gold;
+  cursor: pointer;
+}
+
+#ratings3 label:hover,
+#ratings3 label:hover ~ label,
+#ratings3 input:checked ~ label{
+  color: gold;
+  fill: gold;
+  cursor: pointer;
+}
+
+.ratings{
+  appearance: none;
+  display:flex;
+  flex-direction: row-reverse;
+  font-size: 20px;
+}
+
+.favorites input{
+  appearance: none;
+}
+
+.favorites label{
+  cursor: pointer;
+  display: block;
+}
+
+#favorites1 label:hover,
+#favorites1 label:hover ~ label,
+#favorites1 input:checked ~ label{
+  color: red;
+  fill: red;
+  cursor: pointer;
+}
+
+#favorites2 label:hover,
+#favorites2 label:hover ~ label,
+#favorites2 input:checked ~ label{
+  color: red;
+  fill: red;
+  cursor: pointer;
+}
+
+#favorites3 label:hover,
+#favorites3 label:hover ~ label,
+#favorites3 input:checked ~ label{
+  color: red;
+  fill: red;
+  cursor: pointer;
+}
+
+.favorites{
+  appearance: none;
+  display:flex;
+  flex-direction: row-reverse;
+  font-size: 20px;
+}
 .star-fav {
   font-size: 24px;
   color: var(--color-border);
@@ -228,6 +353,65 @@ body {
 .star-fav.active {
   color: #E6A100;
 }
+
+/* Ingredient page */
+.ingredients{
+  font-size: 18px;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.nutrition{
+  padding: 0 10px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  margin: auto auto;
+  background-color: white;
+  padding-bottom: 5px;
+}
+
+.nutrition-table{
+  border-collapse: collapse;
+  background-color: white;
+  width: 100%;
+}
+
+.nutrition-table td{
+  padding: 3px 0;
+  width: 50%;
+}
+
+.nutrition-table tr{
+  border-bottom: 1px solid gray;
+}
+
+.back{
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #B13D52; ;
+}
+
+.filters{
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+/* .food-filter{
+  padding: 4px 12px;
+  font-size: 13px;
+  border-radius: 12px;
+  margin: 0 0;
+  background-color: #eeeeee;
+} */
+
+
+.hidden{
+  display: none;
+}
+
 
 /* Shopping List Styling */
 .shopping-item {
@@ -315,4 +499,23 @@ body {
   height: 6px;
   background-color: var(--color-title);
   border-radius: 50%;
+}
+
+.content {
+  flex: 1;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow: hidden; 
+}
+.content.scrollable {
+  overflow-y: auto;
+}
+
+.content.scrollable::-webkit-scrollbar {
+  width: 6px;
+}
+
+.content.scrollable::-webkit-scrollbar-thumb {
+  background-color: #B13D52;
+  border-radius: 3px;
 }
