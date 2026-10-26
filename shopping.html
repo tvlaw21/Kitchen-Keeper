@@ -12,8 +12,29 @@
     <header class="app-header">
       <h1 class="app-title">Your shopping list...</h1>
       <div class="input-group">
-        <input type="text" id="shop-input" class="text-input" placeholder="Add..">
-        <button id="add-shop-btn" class="btn-primary">Add</button>
+        <input type="text" id="shop-input"
+              class="text-input" placeholder="Item name">
+
+        <input type="number" id="shop-quantity"
+              class="text-input" placeholder="Qty" min="1">
+
+        <select id="shop-unit" class="text-input">
+          <option value="pieces">Pieces</option>
+          <option value="cartons">Cartons</option>
+          <option value="gallons">Gallons</option>
+          <option value="packs">Packs</option>
+        </select>
+
+        <select id="shop-category" class="text-input">
+          <option value="Dairy">Dairy</option>
+          <option value="Produce">Produce</option>
+          <option value="Meat">Meat</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <button id="add-shop-btn" class="btn-primary">
+          Add
+        </button>
       </div>
     </header>
 
@@ -67,6 +88,6 @@
       </a>
     </nav>
   </div>
-  <script src="js/main.js"></script>
+  <script src="js/shopping.js"></script>
 </body>
 </html>

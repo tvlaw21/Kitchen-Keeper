@@ -559,3 +559,22 @@ align-items: center;
   background-color: #B13D52;
   border-radius: 3px;
 }
+/* Shopping Form Layout */
+.app-header .input-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+#shop-input {
+  grid-column: span 2;
+}
+
+#add-shop-btn {
+  grid-column: span 2;
+}
+
+.app-header .input-group .text-input {
+  width: 100%;
+  min-width: 0;
+}
