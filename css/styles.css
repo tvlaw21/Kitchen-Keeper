@@ -171,6 +171,46 @@ body {
   cursor: pointer;
 }
 
+/* Category Section Styling */
+.category-title {
+  color: var(--color-title);
+  font-size: 18px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 4px;
+}
+
+/* Storage Location Toggle Button */
+.location-toggle-btn {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1.5px solid var(--color-border);
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.location-toggle-btn.fridge {
+  background-color: #D2E4F0; /* Soft cool blue tint for Fridge */
+  color: #1F3A5F;
+}
+
+.location-toggle-btn.pantry {
+  background-color: #F8E5C2; /* Warm amber tint for Pantry */
+  color: #5F3A1F;
+}
+
+.location-toggle-btn:active {
+  transform: scale(0.95);
+}
+
 /* Recipes Styling */
 .filter-pills {
   display: flex;
