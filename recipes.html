@@ -28,17 +28,25 @@
         </div>
     </header>
 
-    <dialog id="food-dialog">
-			<p>HIIIII</p>
-			<button id="close">Close</button>
-		</dialog>
+    <dialog id="food-dialog" class="dialog-box">
+		<div>
+			<h1 class="app-title">List your allergies...</h1>
+			</div>
+			<div class="dialog-text">
+			<input type="text" id="searchBar2" class="text-input" placeholder="New entry...">
+        		<button onclick="add()" class="searchButton">Add</button>
+				<div id="list"></div>
+				</div>
+			<button id="close" class="btn-toggle">Apply Allergies</button>
+			<button id="turn-off" class="btn-toggle">Turn off allergies</button>
+	</dialog>
 
 		<div id="resultDiv">
 			<p id="noResult"></p>
 		</div>
 
 	   <ul class="recipe-div" id="allRecipes">
-		<li class="recipe" id="BlueberryPancakes"> 
+		<li class="recipe" id="BlueberryPancakes" data-ingredients="milk,white vinegar,flour,sugar,baking powder,baking soda,salt,egg,eggs,butter,blueberries,blueberry"> 
 			<a href="BlueberryPancakes.html" class="recipe-link">
 			<img src="Blueberry-Pancakes.png" alt="Blueberry-Pancakes" class="recipe-image">
 			<div class="recipe-content">
@@ -65,7 +73,7 @@
 			</div>
 			</a>
 		</li>
-		<li class="recipe" id="SalmonFriedRice"> 
+		<li class="recipe" id="SalmonFriedRice" data-ingredients="coconut oil,onion,onions,ginger,gingers,garlic,garlics,sesame oil,rice,peas,pea,carrots,carrot,butter,eggs,egg,salt,pepper,salmon,soy sauce,rice vinegar,green onions,green onion,sriracha"> 
 			<a href="SalmonFriedRice.html" class="recipe-link">
 			<img src="SalmonFriedRice.png" alt="SalmonFriedRice" class="recipe-image">
 			<div class="recipe-content">
@@ -93,7 +101,7 @@
 			</a>
 		</li>
 		
-		<li class="recipe vegetarian gluten-free" id="CafeLatte"> 
+		<li class="recipe vegetarian gluten-free" id="CafeLatte" data-ingredients="milk,coffee,milks,coffees"> 
 			<a href="CafeLatté.html" class="recipe-link">
 			<img src="CafeLatté.png" alt="CafeLatté" class="recipe-image">
 			<div class="recipe-content">

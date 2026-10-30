@@ -231,7 +231,8 @@ body {
   white-space: nowrap;
   font-size: 16px;
   cursor: pointer;
-  background-color: #F2D0A9;
+  background-color: var(--bg-accent);
+  color: var(--color-text);
 }
 .food-filter.active,
 .food-filter:hover{
@@ -243,8 +244,9 @@ body {
   border: 1.5px solid var(--color-border);
   border-radius: 20px;
   background-color: var(--bg-accent);
-  font-size: 15px;
+  font-size: 20px;
   cursor: pointer;
+  color: var(--color-text);
 }
 
 .recipe{
@@ -279,7 +281,7 @@ body {
 
 ul.recipe-div li a{
   display: flex;
-  color: black;
+  color: var(--color-text);
   padding: 10px 0;
   text-decoration: none;
   font-size: 14px;
@@ -437,6 +439,7 @@ align-items: center;
 .filters{
   margin-left: 20px;
   margin-bottom: 15px;
+  
 }
 
 /* .food-filter{
@@ -577,4 +580,77 @@ align-items: center;
 .app-header .input-group .text-input {
   width: 100%;
   min-width: 0;
+}
+
+.dialog-box{
+  border-color: var(--color-border);
+  height: 500px;
+  width: 500px;
+  justify-self: center;
+  background-color: #f5ede5;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.dialog-text{
+  margin-bottom: auto;
+
+}
+
+#close{
+  margin-top: auto;
+  margin-bottom: 10px;
+  font-size: 15px;
+  justify-content: center;
+  color: var(--color-text);
+}
+
+#turn-off{
+  margin-top: auto;
+  margin-bottom: 10px;
+  font-size: 15px;
+  justify-content: center;
+  color: var(--color-text);
+}
+
+.toDo{
+background-color: rgb(177, 166, 166);
+min-height: 30px;
+position: relative;
+}
+.toDo.done{
+  background-color: gray;
+  text-decoration: line-through;
+}
+
+#list{
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#notification{
+  background-color:red;
+  color:white;
+  min-height:50px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  position:relative;
+  display: flex;
+
+}
+
+.exit_button{
+  position:absolute;
+  top:0;
+  right:0;
+  cursor:pointer;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: var(--color-text);
 }

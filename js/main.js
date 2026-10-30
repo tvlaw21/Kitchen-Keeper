@@ -67,21 +67,39 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
-
 async function main() {
-    const dialogBox = document.getElementById("food-dialog");
-    const open = document.getElementById("allergies");
+    const allergyButton = document.getElementById("allergies");
     const close = document.getElementById("close");
+    const allergyToggle = document.getElementById("turn-off");
     const filters = document.querySelectorAll(".food-filter");
     const allRecipes = document.querySelectorAll(".recipe");
     const allRatings = document.querySelectorAll(".ratings");
+    const foodDialog = document.getElementById("food-dialog");
 
-    open.addEventListener("click", ()=>{
-        dialogBox.showModal();
+    allergyButton.addEventListener("click", ()=>{
+        allergyButton.classList.add("active");
+        foodDialog.showModal();
     });
     close.addEventListener("click", ()=>{
-        dialogBox.close();
+        checkFilter(filters, allRecipes);
+        foodDialog.close();
+    });
+
+
+    allergyToggle.addEventListener("click", ()=>{
+      // allergyButton.classList.toggle("active");
+        // if(!allergyButton.classList.contains("active")){
+        //   allergyButton.classList.add("active");
+        // foodDialog.showModal();
+        // }else{
+          allergyButton.classList.remove("active");
+          allergyArray.length = 0;
+          // toDoDiv.appendChild(exit_button);
+          list.replaceChildren();
+          foodDialog.close();
+
+          checkFilter(filters, allRecipes);
+        // }
     });
 
 
@@ -103,6 +121,7 @@ async function main() {
                 recipe.classList.remove("favorite");
                 localStorage.removeItem(recipe.id);
             }
+              checkFilter(filters, allRecipes);
             });
         });
 
@@ -137,62 +156,109 @@ async function main() {
         });
 
     filters.forEach(filter => {
+      if(filter.value !== "allergies"){
     filter.addEventListener("click", () =>{
         filter.classList.toggle("active");
         checkFilter(filters, allRecipes);
     });
+  }
     });
 
 }
 
+
+  const allergyArray = []
+
 function checkFilter(filters, allRecipes){
+  const searched = document.getElementById("searchBar").value.toLowerCase().replace(/\s/g, "").trim();
+
     const arrayFilters = [];
     filters.forEach(filter => {
         if(filter.classList.contains("active")){
             arrayFilters.push(filter.value);
         }
     });
+   let found = false;
+   const textDiv = document.getElementById("noResult");
     allRecipes.forEach(recipe => {
+      let ingrd = recipe.dataset.ingredients.trim().toLowerCase().split(",");
+      let searchMatch = recipe.id.toLowerCase().includes(searched);
+      let matches = arrayFilters.every(filter => {
+        if(filter === "allergies"){
+          const allergyFound = allergyArray.some(allergy =>{
+          return(ingrd.includes(allergy.trim().toLowerCase()));
 
-            let matches = true; 
-    arrayFilters.forEach(filter => {
-        if(!recipe.classList.contains(filter)){
-            matches = false;
+        });
+        return !allergyFound;
+        }else {
+          return recipe.classList.contains(filter);
         }
+        
     });
-    if(matches){
-        recipe.classList.remove("hidden");
+    if(matches && searchMatch){
+          recipe.classList.remove("hidden");
+          found = true;
     }else{
-        recipe.classList.add("hidden");
+      recipe.classList.add("hidden");
     }
-    });
+     if(!found){
+      textDiv.textContent = "Sorry: No Recipe Found";
+    }else{
+      textDiv.textContent = "";
+    }
+        });
 }
 
-// Sear Recipe
+// Search Recipe
 function search(){
-    const searched = document.getElementById("searchBar");
-    const resultDiv = document.createElement("resultDiv");
-    const textDiv = document.getElementById("noResult");
     const allRecipes = document.querySelectorAll(".recipe");
-    let found = false;
-    textDiv.replaceChildren();
-    if(search !== null){
-    allRecipes.forEach(recipe => {
-        if(searched.value === "" || recipe.id.toLowerCase().includes(searched.value.toLowerCase().replace(/\s/g, "").trim())){
-            recipe.classList.remove("hidden");
-            found = true;
-        }else{
-            recipe.classList.add("hidden");
-        }
-    });
-    if(!found){
-      allRecipes.forEach(recipe => {
-          recipe.classList.add("hidden");
-      });
-      textDiv.textContent = "Sorry: No Recipe Found"
-    }
-  }
+    const filters = document.querySelectorAll(".food-filter");
+
+    checkFilter(filters, allRecipes);
 }
 
-main();
+const list = document.getElementById("list");
+
+function add(){
+    const searchBar = document.getElementById("searchBar2");
+    const searched = searchBar.value.trim().toLowerCase();
+    const toDoDiv = document.createElement("div");
+    
+    const allRecipes = document.querySelectorAll(".recipe");
+    toDoDiv.className = "toDo";
+    if(searched != "" && !allergyArray.includes(searched)){
+    allergyArray.push(searched);
+    const allergyText = document.createElement("span");
+    allergyText.textContent = searched;
+    toDoDiv.appendChild(allergyText);
+
+    const exit_button = document.createElement("button");
+    exit_button.className = "exit_button";
+    exit_button.textContent = "x";
+
+
+    exit_button.addEventListener("click", ()=>{
+      const i = allergyArray.indexOf(searched);
+      if(i !== -1){
+        allergyArray.splice(i, 1);
+      }
+        toDoDiv.remove();
+
+
+    });
+
+    toDoDiv.appendChild(exit_button);
+    list.appendChild(toDoDiv);
+
+    const allRecipes = document.querySelectorAll(".recipe");
+    const filters = document.querySelectorAll(".food-filter");
+
+    checkFilter(filters, allRecipes);
+    }
+
+    searchBar.value = "";
+}
+
+// main();
+document.addEventListener('DOMContentLoaded', main);
 
