@@ -14,7 +14,7 @@
 	<div class="content scrollable">
     <header class="app-header">
       <h1 class="app-title">Hello! Start looking for recipes...</h1>
-      <div class="input-group">
+      <div class="input-group searchDiv">
         <input type="text" class="text-input" id="searchBar" placeholder="🔍 Search recipes" oninput="search()">
         <button onclick="search()" class="searchButton"> Search </button>
       </div>
@@ -37,16 +37,18 @@
         		<button onclick="add()" class="searchButton">Add</button>
 				<div id="list"></div>
 				</div>
-			<button id="close" class="btn-toggle">Apply Allergies</button>
-			<button id="turn-off" class="btn-toggle">Turn off allergies</button>
+			<button id="close" class="btn-toggle allergy">Apply Allergies</button>
+			<button id="turn-off" class="btn-toggle allergy">Turn off allergies</button>
 	</dialog>
 
 		<div id="resultDiv">
 			<p id="noResult"></p>
 		</div>
 
-	   <ul class="recipe-div" id="allRecipes">
-		<li class="recipe" id="BlueberryPancakes" data-ingredients="milk,white vinegar,flour,sugar,baking powder,baking soda,salt,egg,eggs,butter,blueberries,blueberry"> 
+	   <div class="recipe-div" id="allRecipes">
+		<tbody>
+		<!-- <tr> -->
+		<div class="recipe" id="BlueberryPancakes" data-ingredients="milk,white vinegar,flour,sugar,baking powder,baking soda,salt,egg,eggs,butter,blueberries,blueberry"> 
 			<a href="BlueberryPancakes.html" class="recipe-link">
 			<img src="Blueberry-Pancakes.png" alt="Blueberry-Pancakes" class="recipe-image">
 			<div class="recipe-content">
@@ -56,7 +58,7 @@
 						<label for="heart1"> &#9829 </label>
 					</div>
 					<h4>Blueberry Pancakes</h4>
-					<p>Super thick and fluffy blueberry pancakes! Melt in your mouth, golden brown, and bursting with blueberries.</p>
+					<!-- <p>Super thick and fluffy blueberry pancakes! Melt in your mouth, golden brown, and bursting with blueberries.</p> -->
 				</div>
 				<div id="ratings1" class="ratings">
 						<input type="checkbox" value="1" name="ratingStars" id="star1" class="star">
@@ -72,8 +74,8 @@
 				</div>
 			</div>
 			</a>
-		</li>
-		<li class="recipe" id="SalmonFriedRice" data-ingredients="coconut oil,onion,onions,ginger,gingers,garlic,garlics,sesame oil,rice,peas,pea,carrots,carrot,butter,eggs,egg,salt,pepper,salmon,soy sauce,rice vinegar,green onions,green onion,sriracha"> 
+		</div>
+		<div class="recipe" id="SalmonFriedRice" data-ingredients="coconut oil,onion,onions,ginger,gingers,garlic,garlics,sesame oil,rice,peas,pea,carrots,carrot,butter,eggs,egg,salt,pepper,salmon,soy sauce,rice vinegar,green onions,green onion,sriracha"> 
 			<a href="SalmonFriedRice.html" class="recipe-link">
 			<img src="SalmonFriedRice.png" alt="SalmonFriedRice" class="recipe-image">
 			<div class="recipe-content">
@@ -83,7 +85,7 @@
 						<label for="heart2"> &#9829 </label>
 					</div>
 					<h4>Salmon Fried Rice</h4>
-					<p>This salmon fried rice is a quick and easy way to turn leftover rice and cooked salmon into a satisfying dinner in just 20 minutes. Frozen peas and carrots, eggs, garlic, ginger, and soy sauce bring everything together in one skillet.</p>
+					<!-- <p>This salmon fried rice is a quick and easy way to turn leftover rice and cooked salmon into a satisfying dinner in just 20 minutes. Frozen peas and carrots, eggs, garlic, ginger, and soy sauce bring everything together in one skillet.</p> -->
 				</div>
 				<div id="ratings2" class="ratings">
 						<input type="checkbox" value="second1" name="rating2Stars" id="r2star1" class="star">
@@ -99,9 +101,10 @@
 				</div>
 			</div>
 			</a>
-		</li>
-		
-		<li class="recipe vegetarian gluten-free" id="CafeLatte" data-ingredients="milk,coffee,milks,coffees"> 
+		</div>
+		<!-- </tr> -->
+		<!-- <tr> -->
+		<div class="recipe vegetarian gluten-free" id="CafeLatte" data-ingredients="milk,coffee,milks,coffees"> 
 			<a href="CafeLatté.html" class="recipe-link">
 			<img src="CafeLatté.png" alt="CafeLatté" class="recipe-image">
 			<div class="recipe-content">
@@ -111,13 +114,13 @@
 						<label for="heart3"> &#9829 </label>
 					</div>
 					<h4>Cafe Latté</h4>
-					<p>Learn how to make a café latte with this easy recipe that will please all fellow coffee drinkers. I love café lattes, but buying them can be pricey. Try this at home!</p>
+					<!-- <p>Learn how to make a café latte with this easy recipe that will please all fellow coffee drinkers. I love café lattes, but buying them can be pricey. Try this at home!</p> -->
 				</div>
 				<div id="ratings3" class="ratings">
 						<input type="checkbox" value="second1" name="rating3Stars" id="r3star1" class="star">
 						<label for="r3star1"> &#9733 </label>
 						<input type="checkbox" value="second2" name="rating3Stars" id="r3star2" class="star">
-						<label for="r3tar2"> &#9733 </label>
+						<label for="r3star2"> &#9733 </label>
 						<input type="checkbox" value="second3" name="rating3Stars" id="r3star3" class="star">
 						<label for="r3star3"> &#9733 </label>
 						<input type="checkbox" value="second4" name="rating3Stars" id="r3star4" class="star">
@@ -127,11 +130,38 @@
 				</div>
 			</div>
 			</a>
-		</li>
-		
+		</div>
+		<div class="recipe vegetarian gluten-free dairy-free vegan" id="Dairy-Free Tzatziki" data-ingredients="cucumber,Greek style vegan yogurt,lemon juice,garlic,dill,salt,black pepper"> 
+			<a href="Dairy-Free-Tzatziki.html" class="recipe-link">
+			<img src="dairy-free-tzatziki.png" alt="Tzatziki" class="recipe-image">
+			<div class="recipe-content">
+				<div class="recipe-text">
+					<div id="favorites4" class="favorites">
+						<input type="checkbox" value="heart4" name="favorite4" id="heart4" class="heart">
+						<label for="heart4"> &#9829 </label>
+					</div>
+					<h4>Dairy-Free Tzatziki</h4>
+					<!-- <p>Learn how to make a café latte with this easy recipe that will please all fellow coffee drinkers. I love café lattes, but buying them can be pricey. Try this at home!</p> -->
+				</div>
+				<div id="ratings4" class="ratings">
+						<input type="checkbox" value="second1" name="rating4Stars" id="r4star1" class="star">
+						<label for="r4star1"> &#9733 </label>
+						<input type="checkbox" value="second2" name="rating4Stars" id="r4star2" class="star">
+						<label for="r4star2"> &#9733 </label>
+						<input type="checkbox" value="second3" name="rating4Stars" id="r4star3" class="star">
+						<label for="r4star3"> &#9733 </label>
+						<input type="checkbox" value="second4" name="rating4Stars" id="r4star4" class="star">
+						<label for="r4star4"> &#9733 </label>
+						<input type="checkbox" value="second5" name="rating4Stars" id="r4star5" class="star">
+						<label for="r4star5"> &#9733 </label>
+				</div>
+			</div>
+			</a>
+		</div>
+		<!-- </tr> -->
 
-
-	</ul>
+		</tbody>
+	</div>
 
 </div>
 
