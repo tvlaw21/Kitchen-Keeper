@@ -183,28 +183,38 @@ function checkFilter(filters, allRecipes){
     allRecipes.forEach(recipe => {
       let ingrd = recipe.dataset.ingredients.trim().toLowerCase().split(",");
       let searchMatch = recipe.id.toLowerCase().includes(searched);
-      let matches = arrayFilters.every(filter => {
+      let match = arrayFilters.every(filter => {
+
         if(filter === "allergies"){
           const allergyFound = allergyArray.some(allergy =>{
-          return(ingrd.includes(allergy.trim().toLowerCase()));
+          return (ingrd.includes(allergy.trim().toLowerCase()));
 
         });
-        return !allergyFound;
-        }else {
-          return recipe.classList.contains(filter);
+        if(allergyFound){
+          return false;
+        }else{
+          return true;
         }
+        }else {
+          if(recipe.classList.contains(filter)){
+            return true;
+          }else{
+            return false;
+          }
+        }
+
         
     });
-    if(matches && searchMatch){
+    if(match && searchMatch){
           recipe.classList.remove("hidden");
           found = true;
     }else{
       recipe.classList.add("hidden");
     }
-     if(!found){
-      textDiv.textContent = "Sorry: No Recipe Found";
-    }else{
+     if(found){
       textDiv.textContent = "";
+    }else{
+      textDiv.textContent = "Sorry: No Recipe Found";
     }
         });
 }
@@ -259,6 +269,5 @@ function add(){
     searchBar.value = "";
 }
 
-// main();
-document.addEventListener('DOMContentLoaded', main);
+main();
 
