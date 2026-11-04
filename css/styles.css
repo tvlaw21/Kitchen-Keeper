@@ -1,9 +1,10 @@
 :root {
-  --bg-main: #F1E3D3;          /* App Background */
-  --bg-accent: #F2D0A9;        /* Icon/Button Background & Navbar */
-  --color-title: #1B3B6F;      /* Deep Navy Blue */
-  --color-text: #483876;       /* Body / Other Text Color */
-  --color-border: #1F2041;     /* Lines / Borders Color */
+  --bg-main: #f1f2f8;          /* App Background */
+  --bg-accent: #d7d7f1;        /* Icon/Button Background & Navbar */
+  --color-title: #1d1e45;      /* Deep Navy Blue */
+  --color-text: #110922;       /* Body / Other Text Color */
+  --color-border: #1d1e45;     /* Lines / Borders Color */
+  --feature-color: #9a9ac2;
 
   /* Typography Sizing */
   --font-title-size: 24px;
@@ -228,7 +229,7 @@ body {
 
 .food-filter.active,
 .food-filter:hover {
-  background-color: #eee;
+  background-color: #9a9ac2;
 }
 
 .app-header .input-group.searchDiv {
@@ -260,7 +261,8 @@ body {
   color: var(--color-text);
 }
 
-.recipe {
+.recipe{
+  /* display: flex; */
   align-items: center;
   border: 2px solid var(--color-border);
   border-radius: 12px;
@@ -268,19 +270,21 @@ body {
   margin-bottom: 12px;
   background-color: rgba(255, 255, 255, 0.3);
   position: relative;
+  background-color: var(--feature-color);
 }
 
-.recipe-div {
+.recipe-div{
   max-width: 100%;
-  margin: auto;
+  margin: auto auto;
   border-radius: 10px;
   list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  border-spacing: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  
 }
 
-.recipe-image {
+.recipe-image{
   width: 100px;
   height: 100px;
   border-radius: 8px;
@@ -292,69 +296,210 @@ body {
   border: 1.5px solid var(--color-border);
 }
 
-.recipe-div .recipe a {
+.recipe-div .recipe a{
   display: flex;
   color: var(--color-text);
   padding: 10px 0;
   text-decoration: none;
   font-size: 18px;
   align-items: center;
-  width: 100%;
 }
 
-.recipe:hover {
+.recipe-div .recipe{
+  margin: 12px 12px;
+}
+
+.recipe:hover{
   cursor: pointer;
   background-color: #cccccc;
 }
 
-.recipe-content {
+.recipe-content{
   display: flex;
-  flex: 1;
+  flex:1;
   align-items: center;
+
 }
 
-.recipe-text {
-  text-align: left;
+.recipe-text{
+  text-align: center;
   font-size: 18px;
-  flex: 1;
+}
+.recipe-text p{
+  font-size: 18px;
 }
 
-.recipe-text p {
-  font-size: 16px;
-}
 
-.ratings input, .favorites input {
+.ratings input{
   appearance: none;
 }
 
-.ratings label, .favorites label {
+.ratings label{
   cursor: pointer;
   display: block;
 }
 
-.ratings {
-  display: flex;
-  flex-direction: row-reverse;
-  font-size: 18px;
-  position: absolute;
-  bottom: 8px;
-  right: 12px;
-}
-
-.favorites label {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-}
-
-.star-fav {
-  font-size: 24px;
-  color: var(--color-border);
+#ratings1 label:hover,
+#ratings1 label:hover ~ label,
+#ratings1 input:checked ~ label{
+  color: rgb(250, 211, 69);
+  fill: rgb(250, 211, 69);
   cursor: pointer;
 }
 
-.star-fav.active {
-  color: #E6A100;
+#ratings2 label:hover,
+#ratings2 label:hover ~ label,
+#ratings2 input:checked ~ label{
+  color: rgb(250, 211, 69);
+  fill: rgb(250, 211, 69);
+  cursor: pointer;
+}
+
+#ratings3 label:hover,
+#ratings3 label:hover ~ label,
+#ratings3 input:checked ~ label{
+  color: rgb(250, 211, 69);
+  fill: rgb(250, 211, 69); 
+  cursor: pointer;
+}
+
+#ratings4 label:hover,
+#ratings4 label:hover ~ label,
+#ratings4 input:checked ~ label{
+  color: rgb(250, 211, 69);
+  fill: rgb(250, 211, 69);
+  cursor: pointer;
+}
+
+.ratings{
+  appearance: none;
+  display:flex;
+  flex-direction: row-reverse;
+  font-size: 18px;
+  position:absolute;
+  bottom: 0px;
+  right: 10px;
+}
+
+.favorites input{
+  appearance: none;
+}
+
+.favorites label{
+  cursor: pointer;
+  display: block;
+  position:absolute;
+  top:5px;
+  right:5px;
+  font-size: var(--font-text-size);
+}
+
+#favorites1 label:hover,
+#favorites1 label:hover ~ label,
+#favorites1 input:checked ~ label{
+  color: rgb(199, 6, 6);
+  fill: rgb(199, 6, 6);
+  cursor: pointer;
+}
+
+#favorites2 label:hover,
+#favorites2 label:hover ~ label,
+#favorites2 input:checked ~ label{
+  color: rgb(199, 6, 6);
+  fill: rgb(199, 6, 6);
+  cursor: pointer;
+}
+
+#favorites3 label:hover,
+#favorites3 label:hover ~ label,
+#favorites3 input:checked ~ label{
+  color: rgb(199, 6, 6);
+  fill: rgb(199, 6, 6);
+  cursor: pointer;
+}
+#favorites4 label:hover,
+#favorites4 label:hover ~ label,
+#favorites4 input:checked ~ label{
+  color: rgb(199, 6, 6);
+  fill: rgb(199, 6, 6);
+  cursor: pointer;
+}
+
+.favorites{
+  appearance: none;
+  display:flex;
+  flex-direction: row-reverse;
+  font-size: 18px;
+}
+
+
+/* Ingredient page */
+.ingredients{
+  font-size: 18px;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.instructions{
+  margin: auto auto;
+}
+
+.instruction-list{
+  
+  padding-left: 30px;
+  margin-left: 30px;
+}
+
+.nutrition{
+  padding: 0 10px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  margin: auto auto;
+  background-color: white;
+  padding-bottom: 5px;
+  font-size: var(--font-title-size);
+}
+
+.nutrition-table{
+  border-collapse: collapse;
+  background-color: white;
+  width: 100%;
+  font-size: var(--font-text-size);
+}
+
+.nutrition-table td{
+  padding: 3px 0;
+  width: 50%;
+}
+
+.nutrition-table tr{
+  border-bottom: 1px solid gray;
+}
+
+.back{
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--color-title); ;
+}
+
+.filters{
+  width: 100%;
+  margin-bottom: 15px;
+  
+}
+
+.btn-toggle.allergy{
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  width: 100%;
+}
+
+.hidden{
+  display: none;
 }
 
 /* Shopping List Styling & Form Layout Fix (Issue 1) */
@@ -464,9 +609,10 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 4px;
-  font-size: 15px;
+  font-size: 18px;
   background-color: rgba(255, 255, 255, 0.2);
   cursor: pointer;
+  background-color: var(--feature-color);
 }
 
 .day-cell.today {
