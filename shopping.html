@@ -11,12 +11,10 @@
   <div class="device-container">
     <header class="app-header">
       <h1 class="app-title">Your shopping list...</h1>
-      <div class="input-group">
-        <input type="text" id="shop-input"
-              class="text-input" placeholder="Item name">
+      <div class="input-group shopping-form-group">
+        <input type="text" id="shop-input" class="text-input" placeholder="Item name">
 
-        <input type="number" id="shop-quantity"
-              class="text-input" placeholder="Qty" min="1">
+        <input type="number" id="shop-quantity" class="text-input" placeholder="Qty" min="1">
 
         <select id="shop-unit" class="text-input">
           <option value="pieces">Pieces</option>
@@ -32,12 +30,11 @@
           <option value="Other">Other</option>
         </select>
 
-        <button id="add-shop-btn" class="btn-primary">
-          Add
-        </button>
+        <button id="add-shop-btn" class="btn-primary">Add</button>
       </div>
     </header>
 
+    <!-- Added id="shopping-list-container" here -->
     <main class="app-content" id="shopping-list-container">
       <div class="shopping-item">
         <div class="shopping-item-left">
