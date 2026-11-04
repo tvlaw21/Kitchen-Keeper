@@ -11,16 +11,32 @@
   <div class="device-container">
     <header class="app-header">
       <h1 class="app-title">What you have...</h1>
-      <!-- Optional Category Filter / Quick Add bar -->
-      <div class="input-group" style="margin-bottom: 8px;">
-        <input type="text" class="text-input" placeholder="Add pantry item...">
-        <button class="btn-primary">Add</button>
+      <div class="input-group" style="flex-direction: column; gap: 8px;">
+        <input type="text" id="pantry-name" class="text-input" placeholder="Item name (e.g., Flour)" style="width: 100%;">
+        <div style="display: flex; gap: 8px; width: 100%;">
+          <input type="number" id="pantry-qty" class="text-input" placeholder="Qty" min="1" value="1" style="width: 25%;">
+          <select id="pantry-category" class="text-input" style="width: 35%;">
+            <option value="Produce">Produce</option>
+            <option value="Dairy & Eggs">Dairy & Eggs</option>
+            <option value="Dry Goods">Dry Goods</option>
+            <option value="Baking Goods">Baking Goods</option>
+          </select>
+          <select id="pantry-location" class="text-input" style="width: 40%;">
+            <option value="fridge">Fridge</option>
+            <option value="pantry">Pantry</option>
+          </select>
+        </div>
+        <div style="display: flex; gap: 8px; width: 100%; align-items: center;">
+          <span style="font-size: 14px; font-weight: bold;">Exp:</span>
+          <input type="date" id="pantry-date" class="text-input" style="flex: 1;">
+          <button id="add-pantry-btn" class="btn-primary">Add Item</button>
+        </div>
       </div>
     </header>
 
-    <main class="app-content">
+    <main class="app-content" id="pantry-main-container">
       <!-- PRODUCE CATEGORY -->
-      <div class="category-section">
+      <div class="category-section" data-category="Produce">
         <h3 class="category-title"><i class="fas fa-carrot"></i> Produce</h3>
         <table class="pantry-table">
           <thead>
@@ -31,13 +47,13 @@
               <th>Exp. Date</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="pantry-tbody">
             <tr>
               <td>Blueberries</td>
               <td>
                 <div class="qty-control">
                   <button class="btn-qty btn-minus">-</button>
-                  <span class="qty-val">1 pt</span>
+                  <span class="qty-val">1</span>
                   <button class="btn-qty btn-plus">+</button>
                 </div>
               </td>
@@ -53,7 +69,7 @@
       </div>
 
       <!-- DAIRY CATEGORY -->
-      <div class="category-section" style="margin-top: 20px;">
+      <div class="category-section" data-category="Dairy & Eggs" style="margin-top: 20px;">
         <h3 class="category-title"><i class="fas fa-cheese"></i> Dairy & Eggs</h3>
         <table class="pantry-table">
           <thead>
@@ -64,7 +80,7 @@
               <th>Exp. Date</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="pantry-tbody">
             <tr>
               <td>Eggs</td>
               <td>
@@ -81,28 +97,12 @@
               </td>
               <td>10/20/2026</td>
             </tr>
-            <tr>
-              <td>Milk</td>
-              <td>
-                <div class="qty-control">
-                  <button class="btn-qty btn-minus">-</button>
-                  <span class="qty-val">1 gal</span>
-                  <button class="btn-qty btn-plus">+</button>
-                </div>
-              </td>
-              <td>
-                <button class="location-toggle-btn fridge" title="Click to change location">
-                  <i class="fas fa-snowflake"></i> Fridge
-                </button>
-              </td>
-              <td>10/17/2026</td>
-            </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- PANTRY / DRY GOODS CATEGORY -->
-      <div class="category-section" style="margin-top: 20px;">
+      <!-- DRY GOODS CATEGORY -->
+      <div class="category-section" data-category="Dry Goods" style="margin-top: 20px;">
         <h3 class="category-title"><i class="fas fa-boxes"></i> Dry Goods & Pantry</h3>
         <table class="pantry-table">
           <thead>
@@ -113,13 +113,13 @@
               <th>Exp. Date</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="pantry-tbody">
             <tr>
               <td>Bread</td>
               <td>
                 <div class="qty-control">
                   <button class="btn-qty btn-minus">-</button>
-                  <span class="qty-val">12 slices</span>
+                  <span class="qty-val">1</span>
                   <button class="btn-qty btn-plus">+</button>
                 </div>
               </td>
@@ -129,6 +129,39 @@
                 </button>
               </td>
               <td>10/24/2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- BAKING GOODS CATEGORY (NEW) -->
+      <div class="category-section" data-category="Baking Goods" style="margin-top: 20px;">
+        <h3 class="category-title"><i class="fas fa-birthday-cake"></i> Baking Goods</h3>
+        <table class="pantry-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Qty</th>
+              <th>Location</th>
+              <th>Exp. Date</th>
+            </tr>
+          </thead>
+          <tbody class="pantry-tbody">
+            <tr>
+              <td>All-Purpose Flour</td>
+              <td>
+                <div class="qty-control">
+                  <button class="btn-qty btn-minus">-</button>
+                  <span class="qty-val">1</span>
+                  <button class="btn-qty btn-plus">+</button>
+                </div>
+              </td>
+              <td>
+                <button class="location-toggle-btn pantry" title="Click to change location">
+                  <i class="fas fa-archive"></i> Pantry
+                </button>
+              </td>
+              <td>12/15/2026</td>
             </tr>
           </tbody>
         </table>
