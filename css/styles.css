@@ -170,6 +170,7 @@ body {
   color: var(--color-text);
   font-weight: bold;
   cursor: pointer;
+  font-size: 18px;
 }
 
 .category-title {
