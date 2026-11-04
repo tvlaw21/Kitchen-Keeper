@@ -12,8 +12,8 @@
     <header class="app-header">
       <h1 class="app-title">Let's plan...</h1>
       <div class="calendar-view-toggle">
-        <button class="btn-toggle">Week</button>
-        <button class="btn-toggle" style="font-weight: bold;">Month</button>
+        <button id="btn-week-view" class="btn-toggle">Week</button>
+        <button id="btn-month-view" class="btn-toggle" style="font-weight: bold;">Month</button>
       </div>
       <div class="calendar-header-month">
         <i class="fas fa-chevron-left"></i>
@@ -21,6 +21,19 @@
         <i class="fas fa-chevron-right"></i>
       </div>
     </header>
+		
+		<!-- Meal Scheduling Modal -->
+		<dialog id="meal-modal" class="dialog-box">
+			<h2 class="app-title">Schedule Meal</h2>
+			<p class="dialog-text">Select a recipe for this day:</p>
+			<select id="recipe-select" class="text-input" style="width: 100%; margin-bottom: 20px;">
+				<option value="Blueberry Pancakes">Blueberry Pancakes</option>
+				<option value="Salmon Fried Rice">Salmon Fried Rice</option>
+				<option value="Cafe Latté">Cafe Latté</option>
+			</select>
+			<button id="save-meal-btn" class="btn-toggle" style="margin-bottom: 10px;">Schedule & Sync Shopping List</button>
+			<button id="close-meal-modal" class="btn-toggle">Cancel</button>
+		</dialog>
 
     <main class="app-content">
       <div class="calendar-grid">
@@ -32,6 +45,7 @@
         <div class="day-name">Fri</div>
         <div class="day-name">Sat</div>
 
+        <!-- Example Grid Days -->
         <div class="day-cell"><span></span></div>
         <div class="day-cell"><span></span></div>
         <div class="day-cell"><span></span></div>
@@ -55,23 +69,6 @@
         <div class="day-cell"><span>15</span></div>
         <div class="day-cell"><span>16</span></div>
         <div class="day-cell"><span>17</span></div>
-
-        <div class="day-cell"><span>18</span></div>
-        <div class="day-cell"><span>19</span></div>
-        <div class="day-cell"><span>20</span></div>
-        <div class="day-cell"><span>21</span></div>
-        <div class="day-cell"><span>22</span></div>
-        <div class="day-cell"><span>23</span></div>
-        <div class="day-cell"><span>24</span></div>
-
-        <div class="day-cell"><span>25</span></div>
-        <div class="day-cell"><span>26</span></div>
-        <div class="day-cell"><span>27</span></div>
-        <div class="day-cell"><span>28</span></div>
-        <div class="day-cell"><span>29</span></div>
-        <div class="day-cell"><span>30</span></div>
-        <div class="day-cell"><span>31</span></div>
-
       </div>
     </main>
 

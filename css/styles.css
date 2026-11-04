@@ -451,18 +451,20 @@ body {
 }
 
 .nutrition{
-  padding: 0 10px;
-  border: 2px solid black;
+  padding: 20px 20px;
+  border: 2px solid var(--color-border);
   box-sizing: border-box;
   margin: auto auto;
-  background-color: white;
-  padding-bottom: 5px;
+  background-color: var(--feature-color);
+  /* padding-bottom: 5px; */
   font-size: var(--font-title-size);
+  
 }
 
 .nutrition-table{
+  padding: 20px 20px;
   border-collapse: collapse;
-  background-color: white;
+  background-color: var(--bg-accent);
   width: 100%;
   font-size: var(--font-text-size);
 }
@@ -637,6 +639,15 @@ body {
 }
 .content.scrollable {
   overflow-y: auto;
+}
+
+.content.scrollable::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content.scrollable::-webkit-scrollbar-thumb {
+  background-color: var(--feature-color);
+  border-radius: 5px;
 }
 
 .dialog-box {
