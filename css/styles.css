@@ -1,7 +1,7 @@
 :root {
   --bg-main: #F1E3D3;          /* App Background */
   --bg-accent: #F2D0A9;        /* Icon/Button Background & Navbar */
-  --color-title: #B13D52;      /* Title Text Color */
+  --color-title: #1B3B6F;      /* Deep Navy Blue */
   --color-text: #483876;       /* Body / Other Text Color */
   --color-border: #1F2041;     /* Lines / Borders Color */
 
@@ -22,7 +22,6 @@
   padding: 0;
 }
 
-/* Page Outer Body (Black background requirement) */
 body {
   background-color: #000000;
   font-family: var(--font-primary);
@@ -34,7 +33,6 @@ body {
   min-height: 100vh;
 }
 
-/* 640x960 Mobile Viewport Device Container */
 .device-container {
   width: 640px;
   height: 960px;
@@ -46,11 +44,9 @@ body {
   position: relative;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  position: relative;
-	flex-shrink: 0;
+  flex-shrink: 0;
 }
 
-/* Header Area */
 .app-header {
   padding: 30px 20px 12px 20px;
   background-color: var(--bg-main);
@@ -63,14 +59,12 @@ body {
   margin-bottom: 12px;
 }
 
-/* Main Content Area */
 .app-content {
   flex: 1;
   padding: 0 20px 20px 20px;
   overflow-y: auto;
 }
 
-/* Bottom Navigation Bar */
 .bottom-nav {
   height: 100px;
   background-color: var(--bg-accent);
@@ -106,7 +100,6 @@ body {
   font-weight: bold;
 }
 
-/* Reusable UI Elements */
 .input-group {
   display: flex;
   gap: 12px;
@@ -156,6 +149,11 @@ body {
   font-size: 20px;
 }
 
+.pantry-table tr.expiring-soon {
+  background-color: rgba(217, 83, 79, 0.2);
+  border-left: 4px solid #D9534F;
+}
+
 .qty-control {
   display: flex;
   align-items: center;
@@ -173,7 +171,6 @@ body {
   cursor: pointer;
 }
 
-/* Category Section Styling */
 .category-title {
   color: var(--color-title);
   font-size: 18px;
@@ -185,7 +182,6 @@ body {
   padding-bottom: 4px;
 }
 
-/* Storage Location Toggle Button */
 .location-toggle-btn {
   padding: 6px 10px;
   border-radius: 8px;
@@ -200,27 +196,23 @@ body {
 }
 
 .location-toggle-btn.fridge {
-  background-color: #D2E4F0; /* Soft cool blue tint for Fridge */
+  background-color: #D2E4F0;
   color: #1F3A5F;
 }
 
 .location-toggle-btn.pantry {
-  background-color: #F8E5C2; /* Warm amber tint for Pantry */
+  background-color: #F8E5C2;
   color: #5F3A1F;
 }
 
-.location-toggle-btn:active {
-  transform: scale(0.95);
-}
-
 /* Recipes Styling */
-
 .filters {
   display: flex;
   gap: 8px;
   overflow-x: auto;
   padding-bottom: 12px;
   margin-bottom: 16px;
+  width: 100%;
 }
 
 .food-filter {
@@ -231,15 +223,15 @@ body {
   white-space: nowrap;
   font-size: 18px;
   cursor: pointer;
-  background-color: var(--bg-accent);
   color: var(--color-text);
 }
+
 .food-filter.active,
-.food-filter:hover{
+.food-filter:hover {
   background-color: #eee;
 }
 
-.app-header .input-group.searchDiv{
+.app-header .input-group.searchDiv {
   width: 100%;
   margin: 15px auto;
   box-sizing: border-box;
@@ -248,7 +240,7 @@ body {
   gap: 8px;
 }
 
-#searchBar{
+#searchBar {
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -256,10 +248,9 @@ body {
   padding: 10px;
   margin-bottom: 15px;
   font-size: 18px;
-} 
+}
 
-.searchButton{
-  /* flex: 1; */
+.searchButton {
   padding: 10px 10px;
   border: 1.5px solid var(--color-border);
   border-radius: 20px;
@@ -267,33 +258,9 @@ body {
   font-size: 18px;
   cursor: pointer;
   color: var(--color-text);
-  /* margin-right: auto; */ 
 }
 
-.searchDiv .searchButton{
-  /* flex: 1; */
-  height: 100%;
-  padding: auto auto;
-  border: 1.5px solid var(--color-border);
-  border-radius: 20px;
-  background-color: var(--bg-accent);
-  font-size: 18px;
-  cursor: pointer;
-  color: var(--color-text);
-
-  /* margin-right: auto; */ 
-}
-
-.searchDiv{
-  width: 100%;
-  justify-content: center;
-  margin: auto;
-  box-sizing: border-box;
-  display: inline;
-}
-
-.recipe{
-  /* display: flex; */
+.recipe {
   align-items: center;
   border: 2px solid var(--color-border);
   border-radius: 12px;
@@ -303,17 +270,17 @@ body {
   position: relative;
 }
 
-.recipe-div{
+.recipe-div {
   max-width: 100%;
-  margin: auto auto;
+  margin: auto;
   border-radius: 10px;
   list-style-type: none;
-  border-spacing: 15px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.recipe-image{
+.recipe-image {
   width: 100px;
   height: 100px;
   border-radius: 8px;
@@ -325,140 +292,61 @@ body {
   border: 1.5px solid var(--color-border);
 }
 
-.recipe-div .recipe a{
+.recipe-div .recipe a {
   display: flex;
   color: var(--color-text);
   padding: 10px 0;
   text-decoration: none;
   font-size: 18px;
   align-items: center;
+  width: 100%;
 }
 
-.recipe-div .recipe{
-  margin: 12px 12px;
-}
-
-.recipe:hover{
+.recipe:hover {
   cursor: pointer;
   background-color: #cccccc;
 }
 
-.recipe-content{
+.recipe-content {
   display: flex;
-  flex:1;
+  flex: 1;
   align-items: center;
-
 }
 
-.recipe-text{
-  text-align: center;
+.recipe-text {
+  text-align: left;
   font-size: 18px;
-}
-.recipe-text p{
-  font-size: 18px;
+  flex: 1;
 }
 
+.recipe-text p {
+  font-size: 16px;
+}
 
-.ratings input{
+.ratings input, .favorites input {
   appearance: none;
 }
 
-.ratings label{
+.ratings label, .favorites label {
   cursor: pointer;
   display: block;
 }
 
-#ratings1 label:hover,
-#ratings1 label:hover ~ label,
-#ratings1 input:checked ~ label{
-  color: gold;
-  fill: gold;
-  cursor: pointer;
-}
-
-#ratings2 label:hover,
-#ratings2 label:hover ~ label,
-#ratings2 input:checked ~ label{
-  color: gold;
-  fill: gold;
-  cursor: pointer;
-}
-
-#ratings3 label:hover,
-#ratings3 label:hover ~ label,
-#ratings3 input:checked ~ label{
-  color: gold;
-  fill: gold;
-  cursor: pointer;
-}
-
-#ratings4 label:hover,
-#ratings4 label:hover ~ label,
-#ratings4 input:checked ~ label{
-  color: gold;
-  fill: gold;
-  cursor: pointer;
-}
-
-.ratings{
-  appearance: none;
-  display:flex;
+.ratings {
+  display: flex;
   flex-direction: row-reverse;
   font-size: 18px;
-  position:absolute;
-  bottom: 0px;
-  right: 10px;
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
 }
 
-.favorites input{
-  appearance: none;
+.favorites label {
+  position: absolute;
+  top: 8px;
+  right: 12px;
 }
 
-.favorites label{
-  cursor: pointer;
-  display: block;
-  position:absolute;
-  top:5px;
-  right:5px;
-}
-
-#favorites1 label:hover,
-#favorites1 label:hover ~ label,
-#favorites1 input:checked ~ label{
-  color: red;
-  fill: red;
-  cursor: pointer;
-}
-
-#favorites2 label:hover,
-#favorites2 label:hover ~ label,
-#favorites2 input:checked ~ label{
-  color: red;
-  fill: red;
-  cursor: pointer;
-}
-
-#favorites3 label:hover,
-#favorites3 label:hover ~ label,
-#favorites3 input:checked ~ label{
-  color: red;
-  fill: red;
-  cursor: pointer;
-}
-#favorites4 label:hover,
-#favorites4 label:hover ~ label,
-#favorites4 input:checked ~ label{
-  color: red;
-  fill: red;
-  cursor: pointer;
-}
-
-.favorites{
-  appearance: none;
-  display:flex;
-  flex-direction: row-reverse;
-  font-size: 18px;
-}
 .star-fav {
   font-size: 24px;
   color: var(--color-border);
@@ -469,75 +357,7 @@ body {
   color: #E6A100;
 }
 
-/* Ingredient page */
-.ingredients{
-  font-size: 18px;
-  margin-left: 30px;
-  margin-top: 10px;
-}
-
-.instructions{
-  margin: auto auto;
-}
-
-.instruction-list{
-  
-  padding-left: 30px;
-  margin-left: 30px;
-}
-
-.nutrition{
-  padding: 0 10px;
-  border: 2px solid black;
-  box-sizing: border-box;
-  margin: auto auto;
-  background-color: white;
-  padding-bottom: 5px;
-}
-
-.nutrition-table{
-  border-collapse: collapse;
-  background-color: white;
-  width: 100%;
-}
-
-.nutrition-table td{
-  padding: 3px 0;
-  width: 50%;
-}
-
-.nutrition-table tr{
-  border-bottom: 1px solid gray;
-}
-
-.back{
-  background: none;
-  border: none;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  color: #B13D52; ;
-}
-
-.filters{
-  width: 100%;
-  margin-bottom: 15px;
-  
-}
-
-.btn-toggle.allergy{
-  display: flex;
-  flex-direction: column;
-  font-size: 18px;
-  width: 100%;
-}
-
-.hidden{
-  display: none;
-}
-
-
-/* Shopping List Styling */
+/* Shopping List Styling & Form Layout Fix (Issue 1) */
 .shopping-item {
   display: flex;
   align-items: center;
@@ -566,6 +386,28 @@ body {
   cursor: pointer;
 }
 
+.shopping-form-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+#shop-input {
+  grid-column: span 2;
+}
+
+#shop-quantity, #shop-unit {
+  grid-column: span 1;
+}
+
+#shop-category {
+  grid-column: span 2;
+}
+
+#add-shop-btn {
+  grid-column: span 2;
+}
+
 /* Calendar Styling */
 .calendar-view-toggle {
   display: flex;
@@ -580,6 +422,8 @@ body {
   border-radius: 8px;
   background: var(--bg-accent);
   cursor: pointer;
+  color: var(--color-text);
+  font-weight: bold;
 }
 
 .calendar-header-month {
@@ -592,6 +436,11 @@ body {
   margin-bottom: 16px;
 }
 
+.calendar-header-month i {
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -602,6 +451,7 @@ body {
 .day-name {
   font-weight: bold;
   font-size: 18px;
+  color: var(--color-title);
   padding-bottom: 4px;
 }
 
@@ -616,6 +466,13 @@ body {
   padding: 4px;
   font-size: 15px;
   background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.day-cell.today {
+  border: 2px solid var(--color-title);
+  background-color: rgba(27, 59, 111, 0.15);
+  font-weight: bold;
 }
 
 .meal-dot {
@@ -623,6 +480,7 @@ body {
   height: 6px;
   background-color: var(--color-title);
   border-radius: 50%;
+  margin-bottom: 2px;
 }
 
 .content {
@@ -635,104 +493,24 @@ body {
   overflow-y: auto;
 }
 
-.content.scrollable::-webkit-scrollbar {
-  width: 6px;
-}
-
-.content.scrollable::-webkit-scrollbar-thumb {
-  background-color: #B13D52;
-  border-radius: 3px;
-}
-
-/* Shopping Form Layout */
-.app-header .input-group {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-#shop-input {
-  grid-column: span 2;
-}
-
-#add-shop-btn {
-  grid-column: span 2;
-}
-
-.app-header .input-group .text-input {
-  width: 100%;
-  min-width: 0;
-}
-
-.dialog-box{
-  border-color: var(--color-border);
-  height: 500px;
-  width: 500px;
-  justify-self: center;
-  background-color: #f5ede5;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-bottom: 20px;
-  padding-right: 20px;
-  flex-direction: column;
-  margin-top: 100px;
-}
-
-.dialog-text{
-  margin-bottom: auto;
-
-}
-
-#close{
-  margin-top: auto;
-  margin-bottom: 10px;
-  font-size: 15px;
-  justify-content: center;
+.dialog-box {
+  border: 2px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px;
+  background-color: var(--bg-main);
   color: var(--color-text);
+  width: 400px;
+  max-width: 90%;
+  margin: auto;
 }
 
-#turn-off{
-  margin-top: auto;
-  margin-bottom: 10px;
-  font-size: 15px;
-  justify-content: center;
-  color: var(--color-text);
-}
-
-.toDo{
-background-color: rgb(177, 166, 166);
-min-height: 30px;
-position: relative;
-}
-.toDo.done{
-  background-color: gray;
-  text-decoration: line-through;
-}
-
-#list{
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-
-#notification{
-  background-color:red;
-  color:white;
-  min-height:50px;
+#notification-banner {
+  background-color: #2E7D32;
+  color: white;
+  padding: 10px;
   text-align: center;
-  align-items: center;
-  justify-content: center;
-  position:relative;
-  display: flex;
-
-}
-
-.exit_button{
-  position:absolute;
-  top:0;
-  right:0;
-  cursor:pointer;
-  font-size: 20px;
-  background: none;
-  border: none;
-  color: var(--color-text);
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
