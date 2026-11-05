@@ -103,6 +103,13 @@ function setupPantryListeners() {
         if (current > 1) {
           valSpan.textContent = current - 1;
           savePantryToStorage();
+        } else {
+          // If quantity is 1 and "-" is clicked, remove the row completely
+          const row = control.closest('tr');
+          if (row) {
+            row.remove();
+            savePantryToStorage();
+          }
         }
       };
       plusBtn.onclick = () => {
