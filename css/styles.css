@@ -231,7 +231,7 @@ body {
 
 .food-filter.active,
 .food-filter:hover {
-  background-color: #9a9ac2;
+  background-color: var(--feature-color);
 }
 
 .app-header .input-group.searchDiv {
@@ -434,36 +434,32 @@ body {
   font-size: 18px;
 }
 
-
 /* Ingredient page */
-.ingredients{
+.ingredients {
   font-size: 18px;
   margin-left: 30px;
   margin-top: 10px;
 }
 
-.instructions{
+.instructions {
   margin: auto auto;
 }
 
-.instruction-list{
-  
+.instruction-list {
   padding-left: 30px;
   margin-left: 30px;
 }
 
-.nutrition{
+.nutrition {
   padding: 20px 20px;
   border: 2px solid var(--color-border);
   box-sizing: border-box;
   margin: auto auto;
   background-color: var(--feature-color);
-  /* padding-bottom: 5px; */
   font-size: var(--font-title-size);
-  
 }
 
-.nutrition-table{
+.nutrition-table {
   padding: 20px 20px;
   border-collapse: collapse;
   background-color: var(--bg-accent);
@@ -471,42 +467,36 @@ body {
   font-size: var(--font-text-size);
 }
 
-.nutrition-table td{
+.nutrition-table td {
   padding: 3px 0;
   width: 50%;
 }
 
-.nutrition-table tr{
+.nutrition-table tr {
   border-bottom: 1px solid gray;
 }
 
-.back{
+.back {
   background: none;
   border: none;
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
-  color: var(--color-title); ;
+  color: var(--color-title);
 }
 
-.filters{
-  width: 100%;
-  margin-bottom: 15px;
-  
-}
-
-.btn-toggle.allergy{
+.btn-toggle.allergy {
   display: flex;
   flex-direction: column;
   font-size: 18px;
   width: 100%;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
-/* Shopping List Styling & Form Layout Fix (Issue 1) */
+/* Shopping List Styling & Form Layout */
 .shopping-item {
   display: flex;
   align-items: center;
@@ -614,7 +604,6 @@ body {
   justify-content: space-between;
   padding: 4px;
   font-size: 18px;
-  background-color: rgba(255, 255, 255, 0.2);
   cursor: pointer;
   background-color: var(--feature-color);
 }
@@ -663,12 +652,11 @@ body {
   margin: auto;
 }
 
-.dialog-text{
+.dialog-text {
   margin-bottom: auto;
-
 }
 
-#close{
+#close {
   margin-top: auto;
   margin-bottom: 10px;
   font-size: 15px;
@@ -676,7 +664,7 @@ body {
   color: var(--color-text);
 }
 
-#turn-off{
+#turn-off {
   margin-top: auto;
   margin-bottom: 10px;
   font-size: 15px;
@@ -684,33 +672,32 @@ body {
   color: var(--color-text);
 }
 
-.toDo{
-background-color: var(--feature-color);
-min-height: 30px;
-position: relative;
+.toDo {
+  background-color: var(--feature-color);
+  min-height: 30px;
+  position: relative;
 }
 
-#list{
+#list {
   margin-bottom: 20px;
   margin-top: 20px;
 }
 
-#notification{
-  color:white;
-  min-height:50px;
+#notification {
+  color: white;
+  min-height: 50px;
   text-align: center;
   align-items: center;
   justify-content: center;
-  position:relative;
+  position: relative;
   display: flex;
-
 }
 
-.exit_button{
-  position:absolute;
-  top:0;
-  right:10px;
-  cursor:pointer;
+.exit_button {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  cursor: pointer;
   font-size: 20px;
   background: none;
   border: none;
