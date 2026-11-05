@@ -137,7 +137,6 @@ body {
 .pantry-table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed;
   overflow-wrap: break-word;
 }
 
@@ -173,8 +172,6 @@ body {
   font-weight: bold;
   cursor: pointer;
   font-size: 18px;
-  display: flex;
-  flex-direction: column;
 }
 
 .category-title {
@@ -187,10 +184,6 @@ body {
   border-bottom: 2px solid var(--color-border);
   padding-bottom: 4px;
 }
-
-.category-section{
-  /* column-width: 10em;
-} */
 
 .location-toggle-btn {
   padding: 6px 10px;
